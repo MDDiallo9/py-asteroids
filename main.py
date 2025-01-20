@@ -21,6 +21,8 @@ Screen height: {SCREEN_HEIGHT}
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
+    Shot.containers = (shots,updatable,drawable)
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids,updatable, drawable)
     AsteroidField.containers = (updatable)
@@ -49,6 +51,6 @@ Screen height: {SCREEN_HEIGHT}
         pygame.display.flip()
         dt =  clock.tick(60) / 1000
         """ print(f"dt: {dt:.4f} seconds, FPS: {1/dt:.2f} rot: {player.rotation} ast: {asteroids}") """
-        print(f"Drawable group size: {len(drawable)}")
+        """ print(f"Drawable group size: {len(drawable)}") """
 if __name__ == "__main__":
     main()
