@@ -43,7 +43,11 @@ Screen height: {SCREEN_HEIGHT}
         
         for asteroid in asteroids:
             if asteroid.collisionCheck(player) :
+                print("Game over!")
                 on = False
+            for shot in shots :
+                if shot.collisionCheck(asteroid):
+                    asteroid.split()
         """ player.update(dt)
         player.draw(screen) """
         """ testA.draw(screen)
